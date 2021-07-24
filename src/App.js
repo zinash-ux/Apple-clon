@@ -1,24 +1,27 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import './App.css';
+import './Components/Asset/css/bootstrap.css';
+import './Components/Asset/css/Apple.css';
+import Main from './Components/Main/Main2';
+import Header from './Components/Header/js/Header';
+
+import Iphone from './Components/Iphone/Iphone';
+import Footer from './Components/Footer/footer';
+import 'bootstrap';
+import 'bootstrap/dist/js/bootstrap'
+import 'bootstrap/dist/css/bootstrap.css' 
+// import Main from "./Components/Main/Main2";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Header />
+      <Route path="/" exact component={Main} />
+      <Route path="/Iphone" exact component={Iphone} />
+      <Footer />
+
+    </Router>
   );
 }
 
